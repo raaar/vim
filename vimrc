@@ -11,6 +11,17 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'kien/ctrlp.vim'
+Plugin 'jelera/vim-javascript-syntax'
+
+" TODO: YouCompleteMe
+" You must compleate installation process by running:
+" cd ~/.vim/bundle/YouCompleteMe
+" ./install.py
+"
+" You must install Cmake for this to work. Cmake can be installed on its own,
+" or through Brew package manager
+" Plugin 'Valloric/YouCompleteMe'
+
 "
 " " The following are examples of different formats supported.
 " " Keep Plugin commands between vundle#begin/end.

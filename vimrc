@@ -13,14 +13,19 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'kien/ctrlp.vim'
 Plugin 'jelera/vim-javascript-syntax'
 
-" TODO: YouCompleteMe
-" You must compleate installation process by running:
+
+" To re-compile, run:
 " cd ~/.vim/bundle/YouCompleteMe
 " ./install.py
-"
-" You must install Cmake for this to work. Cmake can be installed on its own,
-" or through Brew package manager
-" Plugin 'Valloric/YouCompleteMe'
+" RF: if I decide to uninstall YCM, remember to remove all the bulky
+" dependencies:
+" Cmake from Linuxbrew
+Plugin 'Valloric/YouCompleteMe'
+
+" Alternative to YouCompleteMe
+" Plugin 'ajh17/VimCompletesMe'
+
+Plugin 'Raimondi/delimitMate'
 
 "
 " " The following are examples of different formats supported.

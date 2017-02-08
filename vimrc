@@ -20,12 +20,15 @@ Plugin 'jelera/vim-javascript-syntax'
 " RF: if I decide to uninstall YCM, remember to remove all the bulky
 " dependencies:
 " Cmake from Linuxbrew
-Plugin 'Valloric/YouCompleteMe'
+" Plugin 'Valloric/YouCompleteMe'
 
 " Alternative to YouCompleteMe
 " Plugin 'ajh17/VimCompletesMe'
 
+" Closes any curly brace, brakets... automatically
 Plugin 'Raimondi/delimitMate'
+
+Plugin 'vim-syntastic/syntastic'
 
 "
 " " The following are examples of different formats supported.
@@ -107,13 +110,16 @@ set nowritebackup                 " And again.
 set directory=$HOME/.vim/tmp//,.  " Keep swap files in one location
 
 " UNCOMMENT TO USE
-"set tabstop=2                    " Global tab width.
+set tabstop=2                    " Global tab width.
 "set shiftwidth=2                 " And again, related.
 "set expandtab                    " Use spaces instead of tabs
 
 set laststatus=2                  " Show the status line all the time
 " Useful status information at bottom of screen
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
+
+syntax on
+
 
 " Should be in .gvimrc. Loads 256 colors for pink theme
 "set t_Co=256
@@ -123,12 +129,29 @@ colorscheme monokai
 
 " Nerdtree at startup
 autocmd vimenter * NERDTree
+let NERDTreeShowHidden=1
 
 " Enable mouse use in all modes
 " set mouse=a
 
+
 " Ctrl-P search plugin ignore folders and files
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
+
+" Synthax cheker. TODO: not working
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+let g:syntastic_javascript_checkers = ['eslint']
+
+" let g:syntastic_debug = 3
+
 
 " Tab mappings.
 map <leader>tt :tabdew<cr>

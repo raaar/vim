@@ -120,12 +120,23 @@ set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{exists('*CapsLockStatusline')?CapsLo
 
 syntax on
 
+" RF: Set spellcheck
+setlocal spell spelllang=en_us
+set spell
+
+
 
 " Should be in .gvimrc. Loads 256 colors for pink theme
-"set t_Co=256
+set t_Co=256
 
 " Or use vividchalk
-colorscheme monokai
+" colorscheme monokai
+colorscheme distinguished
+
+
+hi clear SpellBad
+hi SpellBad cterm=underline
+
 
 " Nerdtree at startup
 autocmd vimenter * NERDTree
